@@ -1,0 +1,15 @@
+# Runtime dependencies needed for YOLOX training on Python 3.12.
+# The upstream requirements.txt also pins an old onnx-simplifier release;
+# that package is only needed for export and does not build cleanly here.
+numpy
+torch>=2.0
+torchvision
+opencv_python
+loguru
+tqdm
+thop
+ninja
+tabulate
+psutil
+tensorboard
+pycocotools>=2.0.2

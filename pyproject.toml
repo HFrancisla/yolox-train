@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yolox"
+version = "0.3.0"
+description = "YOLOX is an anchor-free version of YOLO, with a simpler design but better performance!"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "Apache-2.0" }
+authors = [
+    { name = "Megvii BaseDetection Team" },
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+    "License :: OSI Approved :: Apache Software License",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    # Training and inference runtime (from requirements-train.txt)
+    "torch>=2.14.0",
+    "torchvision>=0.29.0",
+    "numpy>=2.5.3",
+    "opencv-python>=5.0.0.93",
+    "loguru>=0.7.3",
+    "tqdm>=4.70.1",
+    "thop>=0.1.1.post2209072238",
+    "ninja>=1.13.2",
+    "tabulate>=0.10.0",
+    "psutil>=7.2.2",
+    "tensorboard>=2.21.0",
+    "pycocotools>=2.0.11",
+
+    # ONNX and OpenVINO export / deployment runtime
+    "onnx>=1.23.0",
+    "onnxsim>=0.7.3",
+    "openvino>=2026.4.0",
+    "onnxruntime>=1.30.0",
+
+    # Build / helper utilities
+    "cmake>=4.4.3",
+]
+
+[project.urls]
+Documentation = "https://yolox.readthedocs.io"
+Source = "https://github.com/Megvii-BaseDetection/YOLOX"
+Tracker = "https://github.com/Megvii-BaseDetection/YOLOX/issues"
+
+[tool.uv]
+# Disable build isolation for local yolox package so it can link against the environment's torch during C++ extension compilation
+no-build-isolation-package = ["yolox"]

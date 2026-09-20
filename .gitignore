@@ -1,11 +1,16 @@
 ### Linux ###
 *~
-
+data/
 # user experiments directory
 YOLOX_outputs/
 datasets/
+weights/
+artifacts/
+models_converted/
 # do not ignore datasets under yolox/data
-!*yolox/data/datasets/
+!yolox/data/
+!yolox/data/datasets/
+!yolox/data/datasets/**
 
 # temporary files which can be created if a process still has a handle open of a deleted file
 .fuse_hidden*
@@ -209,9 +214,16 @@ docs/api
 *.pkl
 *.npy
 *.pth
+*.pt
+*.ckpt
 *.onnx
 *.engine
+*.tensorrt
 events.out.tfevents*
+
+# uv cache
+.uv/
+.uv_cache/
 
 # vscode
 *.code-workspace
