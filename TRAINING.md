@@ -43,13 +43,13 @@ unzip -q \
   -d data
 
 python tools/split_and_copy_dataset.py \
-  --data_dir data/JQ-M-01-0049 \
+  --data_dir datasets/triangle-2851 \
   --train_ratio 0.8 \
   --seed 42
 ```
 
 Expected split: 2,280 train images and 571 validation images. The experiment
-expects the generated `VOC2007/` directory under `data/JQ-M-01-0049/`.
+expects the generated `VOC2007/` directory under `datasets/triangle-2851/`.
 
 ## Train
 
@@ -60,7 +60,7 @@ The old server used batch size 32 on a 24 GB GPU. This workstation has an
 cd /home/hzf/workspace/projects-dev/yolox-train
 source .venv/bin/activate
 
-TRIANGLE_DATA_DIR="$PWD/data/JQ-M-01-0049" \
+TRIANGLE_DATA_DIR="$PWD/datasets/triangle-2851" \
 CUDA_VISIBLE_DEVICES=0 \
 python tools/train.py \
   -f exps/triangle/yolox_triangle_tiny.py \
@@ -79,7 +79,7 @@ to the historical run.
 ## Evaluate
 
 ```bash
-TRIANGLE_DATA_DIR="$PWD/data/JQ-M-01-0049" \
+TRIANGLE_DATA_DIR="$PWD/datasets/triangle-2851" \
 CUDA_VISIBLE_DEVICES=0 \
 python tools/eval.py \
   -f exps/triangle/yolox_triangle_tiny.py \

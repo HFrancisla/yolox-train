@@ -36,11 +36,11 @@ class Exp(MyExp):
         self.exp_name = "yolox_triangle_tiny"
 
         repo_data_dir = os.path.abspath(
-            os.path.join(os.path.dirname(__file__), "..", "..", "data", "JQ-M-01-0049")
+            os.path.join(os.path.dirname(__file__), "..", "..", "datasets", "triangle-2851")
         )
         default_data_dir = repo_data_dir
         if not os.path.isdir(default_data_dir):
-            default_data_dir = os.path.join(get_yolox_datadir(), "JQ-M-01-0049")
+            default_data_dir = os.path.join(get_yolox_datadir(), "triangle-2851")
         self.data_dir = os.path.abspath(
             os.environ.get("TRIANGLE_DATA_DIR", default_data_dir)
         )

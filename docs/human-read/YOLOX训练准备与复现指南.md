@@ -121,7 +121,7 @@ unzip -q \
 解压后的原始目录：
 
 ~~~text
-data/JQ-M-01-0049/
+datasets/triangle-2851/
 ├── Annotations/
 ├── JPEGImages/
 └── classes.txt
@@ -131,7 +131,7 @@ data/JQ-M-01-0049/
 
 ~~~bash
 python tools/split_and_copy_dataset.py \
-  --data_dir data/JQ-M-01-0049 \
+  --data_dir datasets/triangle-2851 \
   --train_ratio 0.8 \
   --seed 42
 ~~~
@@ -139,7 +139,7 @@ python tools/split_and_copy_dataset.py \
 生成的目录：
 
 ~~~text
-data/JQ-M-01-0049/
+datasets/triangle-2851/
 └── VOC2007/
     ├── JPEGImages/
     ├── Annotations/
@@ -208,7 +208,7 @@ test_conf = 0.1
 nmsthre = 0.5
 ~~~
 
-数据目录默认读取 data/JQ-M-01-0049，也可以通过环境变量覆盖：
+数据目录默认读取 datasets/triangle-2851，也可以通过环境变量覆盖：
 
 ~~~bash
 export TRIANGLE_DATA_DIR=/path/to/another/dataset
@@ -298,7 +298,7 @@ batch size 8：
 cd /home/hzf/workspace/projects-dev/yolox-train
 source .venv/bin/activate
 
-TRIANGLE_DATA_DIR="$PWD/data/JQ-M-01-0049" \
+TRIANGLE_DATA_DIR="$PWD/datasets/triangle-2851" \
 CUDA_VISIBLE_DEVICES=0 \
 python tools/train.py \
   -f exps/triangle/yolox_triangle_tiny.py \
@@ -330,7 +330,7 @@ YOLOX_outputs/triangle_0049/
 cd /home/hzf/workspace/projects-dev/yolox-train
 source .venv/bin/activate
 
-TRIANGLE_DATA_DIR="$PWD/data/JQ-M-01-0049" \
+TRIANGLE_DATA_DIR="$PWD/datasets/triangle-2851" \
 CUDA_VISIBLE_DEVICES=0 \
 python tools/eval.py \
   -f exps/triangle/yolox_triangle_tiny.py \
@@ -409,12 +409,12 @@ PY
 重新执行数据划分命令，并确认下面的文件存在：
 
 ~~~text
-data/JQ-M-01-0049/VOC2007/ImageSets/Main/train.txt
+datasets/triangle-2851/VOC2007/ImageSets/Main/train.txt
 ~~~
 
 ### 类别数量或名称错误
 
-检查 data/JQ-M-01-0049/classes.txt，必须与实验配置中的 6 类顺序一致。
+检查 datasets/triangle-2851/classes.txt，必须与实验配置中的 6 类顺序一致。
 
 ### 显存不足
 
