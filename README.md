@@ -1,6 +1,8 @@
 # yolox-train
 
-A simple repo for self YOLOX training
+A simple repo for self YOLOX training.
+
+> Tested and verified on NVIDIA RTX 50-series GPUs (Blackwell architecture) with CUDA 13+ and PyTorch 2.14+ under Python 3.12 (`uv`).
 
 ## Repository Structure
 
